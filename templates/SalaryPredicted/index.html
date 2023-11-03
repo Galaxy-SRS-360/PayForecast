@@ -1,0 +1,29 @@
+<!-- 
+    HTML template for displaying the predicted salary.
+    This template will be rendered by the Flask application.
+    The {{ salary_text }} placeholder will be dynamically replaced with the predicted salary value.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/salaryStyle.css') }}">
+    <title>Salary Prediction</title>
+</head>
+<body>
+    <!-- Container for displaying the predicted salary -->
+    <div class="prediction-container">
+        <!-- Heading to display the predicted salary received from the Flask application -->
+        <h3 class="prediction-text">{{ salary_text }}</h3>
+        <!-- 
+        This template will be rendered by the Flask application. 
+        The {{ salary_text }} placeholder will be dynamically replaced with the predicted salary value.
+        -->
+
+        <!-- Refresh button to generate a new prediction -->
+        <button class="refresh-button" onclick="window.location.href='http://127.0.0.1:8000/'">Generate New Prediction</button>
+    </div>
+</body>
+</html>

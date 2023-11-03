@@ -1,0 +1,55 @@
+<!-- 
+    HTML template for the Salary Predictor web application.
+    This template provides a user interface for entering years of experience,
+    test score, and interview score to predict an employee's salary using machine learning.
+
+    The form data entered by the user is sent to the Flask application for processing.
+    The response from the Flask application is displayed to the user.
+
+    External fonts and stylesheets are imported for styling purposes.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character set and responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Title of the web page -->
+    <title>Salary Predictor</title> 
+    
+    <!-- Importing external fonts for styling -->
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    
+    <!-- Linking external CSS file for additional styling -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <!-- Container div for the login form -->
+    <div class="login">
+        <h1>Predict Salary Analysis</h1>
+        
+        <!-- Main Input Form for Receiving Query to our ML -->
+        <form action="{{ url_for('Salary_Predictor')}}" method="post">
+            <!-- Label and input field for years of experience -->
+            <label for="experience">Years of Experience:</label>
+            <input type="number" id="experience" name="experience" placeholder="0-12" min="0" max="12" required="required" />
+            
+            <!-- Label and input field for test score -->
+            <label for="test_score">Test Score:</label>
+            <input type="number" id="test_score" name="test_score" placeholder="0-10" min="0" max="10" required="required" />
+            
+            <!-- Label and input field for interview score -->
+            <label for="interview_score">Interview Score:</label>
+            <input type="number" id="interview_score" name="interview_score" placeholder="0-10" min="0" max="10" required="required" />
+            
+            <!-- Button to submit the form for prediction -->
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        </form>
+    </div>
+</body>
+</html>
