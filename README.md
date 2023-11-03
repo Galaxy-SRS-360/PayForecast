@@ -20,7 +20,7 @@ Ensure you have the following libraries installed:
 
 1. Create the machine learning model by running the following command:
     ```bash
-    python model.pkl
+    python model.jpynb
     ```
    This creates a serialized version of the model into `model.pkl`.
 
